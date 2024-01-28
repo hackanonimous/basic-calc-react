@@ -10,12 +10,14 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/Checkout@v3
+    - name: Login to Github Container Registry
+      uses: docker/login-action@v1
+      env: 
+        MY_USER: hackanonimous
+      with:
+        registry: ghcr.io
+        username: $MY_USER
+        password: ${{secrets.GH_TOKEN}}
+
     - name: Install & build
-      env:
-        MY_EMAIL: esi.segurity@gmail.com
-        MY_NAME: hackanonimous
-      run: |
-        git config --global user.email $MY_EMAIL
-        git config --global user.name $MY_NAME
-        git remote set-url origin https://$MY_NAME:${{secrets.GH_TOKEN}}@github.com/hackanonimous/basic-calc-react.git
-        npm install && npm run deploy
+      run: npm install && npm run deploy
