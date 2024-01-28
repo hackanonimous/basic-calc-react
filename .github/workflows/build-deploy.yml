@@ -1,24 +1,20 @@
 name: React App Github Deploy
 on:
   push:
-    branches:
-      - "main"
+    branches: ["main"]
   pull_request:
-    branches:
-      - "main"
+    branches: ["main"]
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout
       uses: actions/Checkout@v3
-      with:
-        lfs: true
     - name: Install & build
       run: npm i && npm run build
     - name: deploy
-      uses: JamesIves/github-pages-deploy-action@4.1.1
+      uses: JamesIves/github-pages-deploy-action@v4
       with:
-        token: ${{secrets.TOKEN}}
+        token: ${{secrets.GH_TOKEN}}
         branch: gh-pages
         folder: ./dist
