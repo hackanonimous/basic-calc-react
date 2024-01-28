@@ -11,4 +11,11 @@ jobs:
     - name: Checkout
       uses: actions/Checkout@v3
     - name: Install & build
-      run: npm install && npm run deploy
+      env:
+        MY_EMAIL: esi.segurity@gmail.com
+        MY_NAME: hackanonimous
+      run: |
+        git config --global user.email $MY_EMAIL
+        git config --global user.name $MY_NAME
+        git remote set-url origin https://$MY_NAME:${{secrets.GH_PAGES}}@github.com/hackanonimous/basic-calc-react.git
+        npm install && npm run deploy
