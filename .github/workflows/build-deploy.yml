@@ -23,7 +23,7 @@ jobs:
     - name: Bundle
       run: npm  run deploy
     - name: Deploy
-      uses: JamesIves/github-pages-deploy/-action@v4
+      uses: JamesIves/github-pages-deploy-action@v4
       with:
         branche: main
         folder: dist
