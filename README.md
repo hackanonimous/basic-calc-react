@@ -21,6 +21,7 @@ pnpm i gh-pages --save-dev
 ```json
 "predeploy":"npm run build",
 "deploy":"gh-pages -d dist",
+"build": "vite build --base=/basic-calc-react/",
 ```
 - ejecutamos el deploy
 ```bash
