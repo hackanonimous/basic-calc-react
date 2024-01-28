@@ -50,16 +50,16 @@ jobs:
 	build:
 		runs-on: ubuntu-latest
 	#configuramos los pasos que realizara
-	steps:
-		- name: Checkout
-			uses: actions/Checkout@v3
-		- name: Install & build
-			run: npm i && npm run build
-		- name: deploy
-			uses: JamesIves/github-pages-deploy-action@4.1.1
-			with:
-				branch: gh-pages
-				folder: dist
+		steps:
+			- name: Checkout
+				uses: actions/Checkout@v3
+			- name: Install & build
+				run: npm i && npm run build
+			- name: deploy
+				uses: JamesIves/github-pages-deploy-action@4.1.1
+				with:
+					branch: gh-pages
+					folder: dist
 
 ```
 
