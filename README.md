@@ -22,8 +22,11 @@ pnpm i gh-pages --save-dev
 "predeploy":"npm run build",
 "deploy":"gh-pages -d dist",
 ```
-
-realizaremos un CI (continuous integration) con github actions
+- ejecutamos el deploy
+```bash
+npm run deploy
+```
+## realizaremos un CI (continuous integration) con github actions
 1. nos dirigimos a nuestro repositorio
 2. nos dirigimos a la pestaña `settings`
 3. opcion `Pages`
