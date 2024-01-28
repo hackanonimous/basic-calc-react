@@ -15,7 +15,7 @@ jobs:
       -
         name: Gen dummy page
         run: |
-          echo: hola
+          echo "hola"
       -
         name: Deploy to GitHub Pages
         uses: crazy-max/ghaction-github-pages@v4
