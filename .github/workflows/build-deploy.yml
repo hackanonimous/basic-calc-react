@@ -18,6 +18,12 @@ jobs:
         registry: ghcr.io
         username: $MY_USER
         password: ${{secrets.GH_TOKEN}}
-
-    - name: Install & build
-      run: npm install && npm run deploy
+    - name: Install
+      run: npm ci 
+    - name: Bundle
+      run: npm  run deploy
+    - name: Deploy
+      uses: JamesIves/github-pages-deploy/-action@v4
+      with:
+        branche: main
+        folder: dist
