@@ -11,10 +11,5 @@ jobs:
     - name: Checkout
       uses: actions/Checkout@v3
     - name: Install & build
-      run: npm i && npm run build
-    - name: deploy
-      uses: JamesIves/github-pages-deploy-action@v4
-      with:
-        token: process.env.GH-PAGES
-        branch: gh-pages
-        folder: ./dist
+      run: npm install
+      run: npm run build
